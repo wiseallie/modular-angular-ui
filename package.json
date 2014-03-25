@@ -1,0 +1,10 @@
+{
+  "name": "UI",
+  "version": "0.0.1",
+  "description": "A Mimosa starter skeleton",
+  "devDependencies": {
+    "mimosa-coffeescript": "*",
+    "mimosa-less": "*",
+    "mimosa-html-templates": "*"
+  }
+}
