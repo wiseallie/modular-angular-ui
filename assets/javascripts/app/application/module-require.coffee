@@ -1,1 +1,0 @@
-define ['./controllers/module-require', './services/module-require'],()->

@@ -1,2 +1,2 @@
-define ['../../namespace'], (parentNamespace) ->
-  [parentNamespace, 'home'].join('.');
+define ['../namespace'], (parentNamespace) ->
+  [parentNamespace, 'Home'].join('.')

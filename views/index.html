@@ -9,12 +9,10 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/javascripts/reload-client.js"></script>
-    <script src="/javascripts/vendor/requirejs/require.js" data-main="/javascripts/main"></script>
+    <script src="/javascripts/vendor/requirejs/require.js" data-main="/javascripts/bootstrap"></script>
 
   </head>
-  <body>
-    <div data-ui-view></div>    
-    <p>Welcome to Mimosa</p>
-
+  <body ng-controller="UI.App.Main.layoutCtr"> 
+    <div data-ui-view>Loading application...</div>    
   </body>
 </html>

@@ -1,2 +1,2 @@
 define ['../namespace'], (parentNamespace) ->
-  [parentNamespace, "App"].join('.')
+  [parentNamespace, "Main"].join('.')

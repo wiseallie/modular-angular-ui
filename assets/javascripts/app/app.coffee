@@ -1,21 +1,19 @@
-define [
-  'angular'
-  './namespace'
-  './components/home/namespace'
-  './components/auth/namespace'
-  './application/namespace'
-  './components/home/module-require'
-  './components/auth/module-require'
-  './application/module-require'
-], (angular, namespace, homeNamespace, authNamespace, applicationNamespace )->
-  app = angular.module namespace, [
-    homeNamespace
-    authNamespace
-    applicationNamespace 
-    ]
-    
-  app.run () ->
-  app
-  
-  
+define ['./module-require'], (app)->
+  app.module.config ['$locationProvider', ($locationProvider)->
+
+  ]
+  app.module.run [ '$location', '$rootScope', '$state', '$stateParams', '$log', ($location, $rootScope, $state, $stateParams, $log) ->
+
+    $log.info("App.run")    
+    _.assign $rootScope, 
+      _: _
+      $: $
+      $location: $location
+      $state: $state
+      $stateParams: $stateParams
+      $log: $log
+  ]
+  app.module
+
+
   

@@ -1,2 +1,2 @@
 define ['../namespace'], (parentNamespace) ->
-  [parentNamespace, 'application'].join('.');
+  [parentNamespace, "Component"].join('.')
