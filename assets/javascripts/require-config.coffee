@@ -9,6 +9,7 @@ require
     angularCookies: 'vendor/angular-cookies/angular-cookies'
     angularUiRouter: 'vendor/angular-ui-router/angular-ui-router'
     angularUiUtils: 'vendor/angular-ui-utils/ui-utils'
+    angularLoadingBar: 'vendor/angular-loading-bar/loading-bar'
     restangular: 'vendor/restangular/restangular'
     bootstrap: 'vendor/bootstrap/bootstrap'
     es5Shim: 'vendor/es5-shim/es5-shim'
@@ -36,4 +37,6 @@ require
       exports: "_"
     json:
       deps: ['jquery', 'lodash']
+    angularLoadingBar:
+      deps: ['jquery', 'angular']
     

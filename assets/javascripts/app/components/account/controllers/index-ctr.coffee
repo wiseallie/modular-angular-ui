@@ -1,5 +1,5 @@
 define ['../module', '../namespace'], (m,n) ->
-  name = n + '.loginCtr'
+  name = n + '.indexCtr'
   dependencies = ['$scope', '$stateParams']
   controller = ($scope, $stateParams) ->
     $scope.name = name

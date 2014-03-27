@@ -1,5 +1,4 @@
-define ['./layout-ctr', './application-ctr'],(layout,application)->
-  console.log("main/controllers/module-require")
+define ['./layout-ctr', './index-ctr'],(layout,index)->
   layout: layout
-  application: application
+  index: index
     

@@ -1,5 +1,5 @@
 define ['../module', '../namespace'], (m,n) ->
-  name = n + '.applicationCtr'
+  name = n + '.indexCtr'
   dependencies = ['$scope']
   controller = ($scope) ->
     $scope.$root.$log.info('ctr-name: ', name,', $stateParams: ', $scope.$root.$stateParams)

@@ -1,2 +1,2 @@
-define ['../namespace'], (parentNamespace) ->
-  [parentNamespace, 'Auth'].join('.')
+define ['../namespace', './module-config'], (parentNamespace, config) ->
+  [parentNamespace, config.namespace].join('.')
