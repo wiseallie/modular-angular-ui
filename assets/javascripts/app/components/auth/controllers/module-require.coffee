@@ -1,1 +1,2 @@
-define ['./login-ctr'],()->
+define ['./login-ctr'],(loginCtr)->
+  login: loginCtr

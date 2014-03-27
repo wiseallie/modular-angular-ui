@@ -4,3 +4,4 @@ define ['../module', '../namespace'], (m,n) ->
   controller = ($scope, $stateParams) ->
     $scope.name = name
   m.controller(name, dependencies.concat(controller))
+  name
