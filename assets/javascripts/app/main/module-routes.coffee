@@ -11,7 +11,7 @@ define ['angular', './module-config', './controllers/module-require', '../compon
         controller: controllers.layout,
       new Object
         name: name + '.index'
-        url: '/'+ name
+        url: ''  #important as it will the mount path
         templateUrl: 'index.html'
         controller: controllers.index
     ]
