@@ -11,8 +11,8 @@ define [
   'restangular'
   './namespace'
   './module-config'
-  './main/module-require'
-], (_, $, angular,angularSanitize, angularAnimate,angularCookies, angularUiRouter, angularUiUtils, angularLoadingBar, restangular, namespace, config, appMain)->
+  './components/module-require'
+], (_, $, angular,angularSanitize, angularAnimate,angularCookies, angularUiRouter, angularUiUtils, angularLoadingBar, restangular, namespace, CONFIG, components)->
   ngModule = angular.module namespace, [
     'ngAnimate'
     'ngCookies'
@@ -21,16 +21,17 @@ define [
     'ui.router'
     'ui.utils'
     'angular-loading-bar'
-    appMain.namespace
+    components.namespace
     ]
-  ngModule.constant 'CONFIG',  config
+    
+  ngModule.constant 'CONFIG',  CONFIG
   
   ngModule.config ['$locationProvider', 'cfpLoadingBarProvider', ($locationProvider, cfpLoadingBarProvider)->
     $locationProvider.html5Mode(false).hashPrefix('!')
     cfpLoadingBarProvider.includeSpinner = true
     ]
   
-  ngModule.run [ '$location', '$rootScope', '$state', '$stateParams', '$log', ($location, $rootScope, $state, $stateParams, $log) ->
+  ngModule.run [ '$location', '$rootScope', '$state', '$stateParams', '$log', 'CONFIG', ($location, $rootScope, $state, $stateParams, $log, CONFIG) ->
     $log.info("App.run")    
     _.assign $rootScope, 
       _: _
@@ -39,6 +40,7 @@ define [
       $state: $state
       $stateParams: $stateParams
       $log: $log
+      CONFIG:CONFIG
 
     $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
       $log.info("$stateChangeStart -> ", 'event: ', event, 'toState: ', toState, 'toParams: ', toParams, 'fromState: ', fromState, 'fromParams: ', fromParams)
