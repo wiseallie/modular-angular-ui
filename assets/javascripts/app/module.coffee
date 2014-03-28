@@ -31,7 +31,7 @@ define [
     cfpLoadingBarProvider.includeSpinner = true
     ]
   
-  ngModule.run [ '$location', '$rootScope', '$state', '$stateParams', '$log', 'CONFIG', ($location, $rootScope, $state, $stateParams, $log, CONFIG) ->
+  ngModule.run [ '$location', '$rootScope', '$state', '$stateParams', '$log', 'CONFIG', components.auth.services.auth, ($location, $rootScope, $state, $stateParams, $log, CONFIG, authService) ->
     $log.info("App.run")    
     _.assign $rootScope, 
       _: _
@@ -41,7 +41,8 @@ define [
       $stateParams: $stateParams
       $log: $log
       CONFIG:CONFIG
-
+      authService:authService
+    
     $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
       $log.info("$stateChangeStart -> ", 'event: ', event, 'toState: ', toState, 'toParams: ', toParams, 'fromState: ', fromState, 'fromParams: ', fromParams)
 

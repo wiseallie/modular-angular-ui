@@ -1,3 +1,42 @@
-<p>
-    NAME:  {{name}} 
-</p>
+
+<form name="loginForm" method="post" class="form-horizontal form-login" novalidate>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Login</h3>
+        </div>
+        <div class="panel-body">
+
+            <div class="row form-group" ng-class="{ 'has-error': showError && loginForm.username.$invalid }">
+                <div class="col-md-12">
+                    <input type="email" name="username" class="form-control" placeholder="e-mail address" ng-model="formData.username" focus="focus.username" required/>
+                    <div ng-show="loginForm.username.$error.email" class="text-danger">Invalid email.</div>
+                </div>
+            </div>
+
+            <div class="row form-group" ng-class="{ 'has-error': showError && loginForm.password.$invalid }">
+                <div class="col-md-12">
+                    <input type="password" name="password" class="form-control" placeholder="password" ng-model="formData.password" ng-minlength="6" ng-maxlength="20" focus="focus.password" required/>
+                    <div ng-show="loginForm.password.$error.minlength || loginForm.password.$error.maxlength" class="text-danger">Password has to be between 6 and 20 characters.</div>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="rememberMe" ng-model="form.rememberMe" ng-true-value="1" ng-false-value="0" focus="focus.rememberMe"/>
+                            Remember me
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <p>
+                <button class="btn btn-primary btn-lg btn-login" type="submit" ng-click="login(loginForm)">
+                    Login
+                </button>
+            </p>
+        </div>
+    </div>
+</form>

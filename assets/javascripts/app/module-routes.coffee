@@ -29,7 +29,7 @@ define ['angular', 'lodash', './namespace', './module', './controllers/module-re
               controller: controllers.topMenu
               templateUrl: CONFIG.templatesPath+ '/top-menu.html'
             content: 
-              templateUrl: CONFIG.templatesPath+ '/content.html'
+              template: '<div data-ui-view>Loading content...</div>    '
 
         new Object
           name: name + '.index'
@@ -47,10 +47,10 @@ define ['angular', 'lodash', './namespace', './module', './controllers/module-re
     registerModuleState routes[name].type, name, routes[name].states, '/'
 
     # Register  auth states    
-    registerModuleState routes.auth.type, 'auth', routes.auth.states, '/auth'
+    registerModuleState routes.auth.type, 'auth', routes.auth.states, '/auth', name
 
     # Register  account states    
-    registerModuleState routes.account.type, 'account', routes.account.states, '/account'
+    registerModuleState routes.account.type, 'account', routes.account.states, '/account', name
 
     $urlRouterProvider.otherwise('/')
   ]
