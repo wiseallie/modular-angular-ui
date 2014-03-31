@@ -1,3 +1,3 @@
 define [], () ->
-  moduleName: 'Components'
-  namespace: 'Components'
+  moduleName: 'Features'
+  namespace: 'Features'

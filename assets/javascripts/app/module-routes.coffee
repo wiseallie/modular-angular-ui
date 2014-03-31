@@ -52,5 +52,7 @@ define ['angular', 'lodash', './namespace', './module', './controllers/module-re
     # Register  account states
     registerModuleState routes.account.type, 'account', routes.account.states, '/account', name
 
+    $urlRouterProvider.when('', '/')
     $urlRouterProvider.otherwise('/')
+     
   ]

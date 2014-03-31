@@ -11,6 +11,7 @@ define [], () ->
     login:
       path: '/auth/sessions'
       method: 'POST' # can be [GET, POST, HEAD, PUT]
+      requiresAuth: false
       wrapper: 'user'
       params:
         email: 'email'
@@ -18,25 +19,25 @@ define [], () ->
     logout:
       path: '/auth/sessions'
       method: 'DELETE' # can be [GET, POST, HEAD, PUT]
-      params:
-        email: 'user_email'
-        token: 'user_token'
+      requiresAuth: true
+      params: {}
     passwords:
       path: '/auth/passwords'
-      method: 'DELETE' # can be [GET, POST, HEAD, PUT]
+      method: 'PUT' # can be [GET, POST, HEAD, PUT]
+      requiresAuth: true
       params:
-        email: 'user_email'
-        token: 'user_token'
+        resetPasswordToken: 'reset_password_token'
+        password: 'password'
+        passwordConfirmation: 'password_confirmation'
     authToken:
-      method: 'headers' #prefered method of sending the auth token, options are [params, headers]
+      preferedMethod: 'params' #prefered method of sending the auth token, options are [params, headers]
       params:
-        wrapper: 'user' # used to wrap the params sent back to the server , can be null/false for no wrapper
-        mapping: 
+        wrapper: false # used to wrap the params sent back to the server , can be null/false for no wrapper
+        mapping:
           email: 'user_email'
           token: 'user_token'
       headers:
-        wrapper: 'user' # used to wrap the headers sent back to the server , can be null/false for no wrapper
-        mapping: 
+        wrapper: false # used to wrap the headers sent back to the server , can be null/false for no wrapper
+        mapping:
           email: 'X-User-Email'
           token: 'X-User-Token'
-
