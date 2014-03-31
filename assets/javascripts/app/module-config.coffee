@@ -3,6 +3,6 @@ define [], () ->
   moduleName: 'App'
   namespace: 'App'
   appPath: 'javascripts/app'
-  componentsPath: 'javascripts/app/components'
+  featuresPath: 'javascripts/app/features'
   templatesPath: 'javascripts/app/templates'
   templatesOverwritesPath: 'javascripts/app/templates/overwrites'

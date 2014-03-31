@@ -1,4 +1,4 @@
 define ['angular', './namespace', './module-config'], (angular, namespace, config) -> 
-  console.log('components/auth/module: ', namespace )
+  console.log('features/home/module: ', namespace )
   angular.module namespace, []
     .value 'config', config

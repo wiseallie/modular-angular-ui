@@ -2,7 +2,7 @@ define ['angular', './module-config', './controllers/module-require'], (angular,
   name = config.namespace.toLowerCase()
   obj = {}
   obj[name] = 
-    type: 'component'
+    type: 'feature'
     states: [
       new Object 
         name: name

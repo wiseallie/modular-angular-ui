@@ -245,7 +245,7 @@ exports.config = {
     watch: true                   # Whether or not to watch the bower.json file to automatically
                                   # kick off a bower install when it changes.
     bowerDir:
-      path: ".mimosa/bower/bower_components"    # The location mimosa-bower places temporary
+      path: ".mimosa/bower/bower_features"    # The location mimosa-bower places temporary
                                                 # bower assets.
       clean: true                 # whether or not to remove temporary bower assets after install
 
