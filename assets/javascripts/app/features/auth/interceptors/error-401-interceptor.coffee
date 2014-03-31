@@ -3,7 +3,7 @@ define ['../module', '../namespace'], (m, n) ->
   dependencies = ['$rootScope', '$q']
   interceptor = ($rootScope, $q) ->
     responseError: (rejection) ->
-      console.log("#{name}#responseError, config:  ", config)
+      console.log("#{name}#responseError, rejection:  ", rejection)
       if rejection.status == 401
         $rootScope.$broadcast 'event:error:401', rejection.data, rejection.status
       $q.reject(rejection)

@@ -17,5 +17,4 @@ define [
   services: services
   interceptors: interceptors
   features: features
-  routes: routes
   run: run

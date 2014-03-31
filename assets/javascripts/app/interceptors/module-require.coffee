@@ -1,3 +1,2 @@
-define ['./api-host-interceptor','./auth-token-interceptor'],(apiHostInterceptor, authTokenInterceptor)->
+define ['./api-host-interceptor'],(apiHostInterceptor)->
   apiHost: apiHostInterceptor
-  authToken: authTokenInterceptor

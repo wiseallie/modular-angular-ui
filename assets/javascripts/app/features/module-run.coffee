@@ -1,8 +1,5 @@
-define ['angular', './namespace', './module-config'], (angular, namespace, config) ->
-  console.log('features/auth/module: ', namespace )
-  angular.module namespace, []
-    .run ['$rootScope', '$injector', ($rootScope, $injector)->
-      $rootScope.authService =  $injector.get("#{namespace}.authService")
+define ['angular', './namespace', './module', './module-config'], (angular, namespace, ngModule, config) ->
+  ngModule.run ['$rootScope', ($rootScope)->
       $rootScope.CONFIG = {} unless $rootScope.CONFIG
       $rootScope.CONFIG.modules = {} unless $rootScope.CONFIG.modules
       $rootScope.CONFIG.modules[config.moduleName] = config

@@ -30,14 +30,14 @@ define [], () ->
         password: 'password'
         passwordConfirmation: 'password_confirmation'
     authToken:
-      preferedMethod: 'params' #prefered method of sending the auth token, options are [params, headers]
+      preferedMethod: 'headers' #prefered method of sending the auth token, options are [params, headers]
       params:
-        wrapper: false # used to wrap the params sent back to the server , can be null/false for no wrapper
+        wrapper: false # used to wrap the params sent back to the server , can be false for no wrapper
         mapping:
           email: 'user_email'
           token: 'user_token'
       headers:
-        wrapper: false # used to wrap the headers sent back to the server , can be null/false for no wrapper
+        wrapper: false # used to wrap the headers sent back to the server , can be false for no wrapper
         mapping:
           email: 'X-User-Email'
           token: 'X-User-Token'

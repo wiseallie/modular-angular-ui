@@ -14,7 +14,6 @@ define ['angular', 'lodash', './namespace', './module', './interceptors/module-r
 
       $httpProvider.interceptors.push features.auth.interceptors.error401
       $httpProvider.interceptors.push features.auth.interceptors.authToken
-      $httpProvider.interceptors.push interceptors.authToken
       $httpProvider.interceptors.push interceptors.apiHost
       console.log('$httpProvider.interceptors: ',$httpProvider.interceptors)
 
